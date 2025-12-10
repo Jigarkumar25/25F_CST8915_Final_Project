@@ -21,7 +21,7 @@ This project demonstrates a **real-world cloud-based retail system using Kuberne
 ---
 
 ##  Architecture Diagram  
-The architecture diagram is created using **Draw.io** and shows: <br>
+
 <img src="Architecture diagram/Architecture.drawio.png"></img>
 ---
 
