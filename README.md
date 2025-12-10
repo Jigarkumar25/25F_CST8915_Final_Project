@@ -10,8 +10,9 @@ It simulates a **Best Buy online shopping system** where:
 
 - Customers place orders using the **Store Front**
 - Employees manage orders using the **Store Admin**
-- Orders move through **RabbitMQ**
-- Orders are stored in **MongoDB**
+- Orders are sent through **RabbitMQ**
+- The **Makeline Service** processes the orders and updates their status
+- Orders and product data are stored in **MongoDB**
 - All services run as **Docker containers**
 - **CI/CD is implemented using GitHub Actions**
 
@@ -20,13 +21,8 @@ This project demonstrates a **real-world cloud-based retail system using Kuberne
 ---
 
 ##  Architecture Diagram  
-The architecture diagram is created using **Draw.io** and shows:
-
-
-📂 **Diagram File Location:**  
-`/assets/BestBuy-Architecture.drawio.png`  
-(Add your exported Draw.io image here)
-
+The architecture diagram is created using **Draw.io** and shows: <br>
+<img src="Architecture diagram/Architecture.drawio.png"></img>
 ---
 
 ## Application Services
@@ -48,7 +44,7 @@ The architecture diagram is created using **Draw.io** and shows:
 
 ## Deployment Instructions
 
-This section explains the exact steps I followed to deploy my customized Besy Buy application to a Kubernetes cluster on Azure. All UI changes were completed before containerization so that the deployed version matched my final design.
+This section explains the exact steps I followed to deploy my customized Best Buy application to a Kubernetes cluster on Azure. All UI changes were completed before containerization so that the deployed version matched my final design.
 
 ---
 
@@ -122,7 +118,7 @@ kubectl apply -f config-maps.yaml
 ```
 After the ConfigMaps were created successfully, I applied the allservices.yaml file to deploy all the microservices together. This deployed both the backend and frontend services in a single step.
 ```
-kubectl apply -f config-maps.yaml
+kubectl apply -f allservices.yaml
 ```
 ---
 
